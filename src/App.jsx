@@ -5,6 +5,7 @@ import './resultFanfare.css';
 import './trainnum.css';
 
 import Stopwatch from './Stopwatch';
+import RaneGroup from './raneGroup';
 
 function App() {
   const [teamNames, setTeamNames] = useState(['1', '2', '3', '4', '5']);
@@ -25,6 +26,18 @@ function App() {
   const [addedScore, setAddedScore] = useState(0);
 
   const [resultVisibility, setResultVisibiity] = useState(false);
+  const [ranes, setRanes] = useState([
+    [
+      [10, 10, 90],
+      [20, 20, 45],
+      [30, 30, 20],
+    ],
+    [
+      [13, 20, 110],
+      [85, 20, 40],
+      [50, 50, 10],
+    ],
+  ]);
 
   const handleTeamNameChange = (e, i) => {
     let imsi = teamNames;
@@ -33,27 +46,30 @@ function App() {
   };
 
   const handleScoreDropdownChange = (e) => {
-    setScoreDropdown(e.target.value);
+    setScoreDropdown(Number(e.target.value));
   };
 
   const handleRaneDropdownChange = (e) => {
-    setRaneDropdown(e.target.value);
+    setRaneDropdown(Number(e.target.value));
   };
 
   const handleAddedScoreChange = (e) => {
-    setAddedScore(e.target.value);
+    setAddedScore(Number(e.target.value));
   };
 
   const handleScoreAdd = () => {
-    if (Number(scoreDropdown) !== -1) {
+    if (scoreDropdown !== -1) {
       const newScores = [...scores];
-      newScores[Number(scoreDropdown)] += Number(addedScore);
+      newScores[scoreDropdown] += addedScore;
       setScores(newScores);
     }
   };
 
   return (
     <>
+      {ranes.map((item, index) => (
+        <RaneGroup raneList={item} coloring={raneDropdown}></RaneGroup>
+      ))}
       <div className="board teamlist">
         <div className="teamli red" onClick={() => setCurrentPlayer(0)}>
           <input
