@@ -25,10 +25,56 @@ function Rane({ x, y, r, color }) {
   );
 }
 
-function RaneGroup({ raneList, coloring }) {
+const scoreMap = (n) => {
+  if (n === 1) {
+    return 1;
+  }
+  if (n === 2) {
+    return 2;
+  }
+  if (n === 3) {
+    return 4;
+  }
+  if (n === 4) {
+    return 7;
+  }
+  if (n === 5) {
+    return 10;
+  }
+  if (n === 6) {
+    return 15;
+  }
+};
+
+function RaneGroup({
+  raneList,
+  newColor,
+  trainNum,
+  setTrainNum,
+  scores,
+  setScores,
+}) {
   const [color, setColor] = useState(-1);
+  const length = raneList.length;
+  const score = scoreMap(raneList.length);
   const colorNew = () => {
-    setColor(coloring);
+    // score 조정
+    const newScores = [...scores];
+    if (color !== -1) {
+      newScores[color] -= score;
+    }
+    newScores[newColor] += score;
+    setScores(newScores);
+
+    // trainnum 조정
+    const newTrainNum = [...trainNum];
+    if (color !== -1) {
+      newTrainNum[color] += length;
+    }
+    newTrainNum[newColor] -= length;
+    setTrainNum(newTrainNum);
+
+    setColor(newColor);
   };
 
   return (

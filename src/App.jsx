@@ -68,7 +68,14 @@ function App() {
   return (
     <>
       {ranes.map((item, index) => (
-        <RaneGroup raneList={item} coloring={raneDropdown}></RaneGroup>
+        <RaneGroup
+          raneList={item}
+          newColor={raneDropdown}
+          trainNum={trainNum}
+          setTrainNum={setTrainNum}
+          scores={scores}
+          setScores={setScores}
+        ></RaneGroup>
       ))}
       <div className="board teamlist">
         <div className="teamli red" onClick={() => setCurrentPlayer(0)}>
