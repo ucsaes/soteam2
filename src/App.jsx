@@ -26,6 +26,7 @@ function App() {
   const [addedScore, setAddedScore] = useState(0);
 
   const [resultVisibility, setResultVisibiity] = useState(false);
+  // rane배치 정보 list
   const [ranes, setRanes] = useState([
     [
       [10, 10, 90],

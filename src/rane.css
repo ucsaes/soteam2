@@ -1,3 +1,7 @@
+.raneGroup {
+  z-index: 99;
+}
+
 .rane {
   display: block;
   width: 70px;
