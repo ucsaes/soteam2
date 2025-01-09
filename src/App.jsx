@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import './App.css';
 import './resultFanfare.css';
+import './trainnum.css';
 
 import Stopwatch from './Stopwatch';
 
@@ -100,7 +101,13 @@ function App() {
       <Stopwatch></Stopwatch>
 
       {/*기차개수*/}
-      <div className="board trainnum"></div>
+      <div className="board trainnum">
+        <div className="teamtrainnum red">{trainNum[0]}</div>
+        <div className="teamtrainnum yellow">{trainNum[1]}</div>
+        <div className="teamtrainnum green">{trainNum[2]}</div>
+        <div className="teamtrainnum blue">{trainNum[3]}</div>
+        <div className="teamtrainnum black">{trainNum[4]}</div>
+      </div>
 
       {/*차례 표시*/}
       <div className={`board currentplayer ${currentColor}`}>

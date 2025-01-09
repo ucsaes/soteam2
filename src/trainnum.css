@@ -1,0 +1,13 @@
+.trainnum {
+  display: flex;
+  flex-direction: row; /* 세로로 정렬 */
+  border: 1px solid black;
+}
+
+.teamtrainnum {
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+}
