@@ -28,9 +28,9 @@ function Stopwatch() {
   };
 
   return (
-    <div>
-      <h3>스톱워치</h3>
-      <p>{time} 초</p>
+    <div className="board stopwatch">
+      <div className="ttt">스톱워치</div>
+      <div className="tt">{time} 초</div>
       <button onClick={handleButtonClick}>
         {status === 'running'
           ? '정지'

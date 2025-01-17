@@ -6,7 +6,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(11, 11, 11, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -30,7 +30,7 @@ body {
   overflow-x: auto;
   align-items: center;
   height: 100vh;
-  background: url(/imsi_bg.png) no-repeat center;
+  background: url(/20250117.png) no-repeat center;
   background-size: cover;
 }
 

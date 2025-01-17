@@ -14,11 +14,21 @@ function App() {
 
   const [currentPlayer, setCurrentPlayer] = useState(-1);
   const currentColor = classNames({
+    gray: currentPlayer === -1,
     red: currentPlayer === 0,
     yellow: currentPlayer === 1,
     green: currentPlayer === 2,
     blue: currentPlayer === 3,
     black: currentPlayer === 4,
+  });
+  const [controlPlayer, setControlPlayer] = useState(-1);
+  const controlColor = classNames({
+    gray: controlPlayer === -1,
+    red: controlPlayer === 0,
+    yellow: controlPlayer === 1,
+    green: controlPlayer === 2,
+    blue: controlPlayer === 3,
+    black: controlPlayer === 4,
   });
 
   const [raneDropdown, setRaneDropdown] = useState('');
@@ -36,7 +46,6 @@ function App() {
     [
       [13, 20, 110],
       [85, 20, 40],
-      [50, 50, 10],
     ],
   ]);
 
@@ -135,14 +144,14 @@ function App() {
 
       {/*차례 표시*/}
       <div className={`board currentplayer ${currentColor}`}>
-        <h3>현재 차례</h3>
-        <div className={`${currentPlayer === -1 ? 'hidden' : ''}`}>
+        <div className="ttt">현재차례</div>
+        <div className={`${currentPlayer === -1 ? 'hidden tt' : 'tt'}`}>
           {teamNames[currentPlayer]}
         </div>
       </div>
 
       {/*조작부*/}
-      <div className="control">
+      <div className={`board control ${controlColor}`}>
         <select
           className="raneDropdown"
           value={raneDropdown}
@@ -151,6 +160,7 @@ function App() {
           <option value="" disabled>
             열차놓을 팀
           </option>
+          <option value="-1">{'색 삭제'}</option>
           <option value="0">{teamNames[0]}</option>
           <option value="1">{teamNames[1]}</option>
           <option value="2">{teamNames[2]}</option>
@@ -171,12 +181,19 @@ function App() {
           <option value="3">{teamNames[3]}</option>
           <option value="4">{teamNames[4]}</option>
         </select>
-        <input type="number" onChange={handleAddedScoreChange} />
-        <button onClick={handleScoreAdd}>확인</button>
+        <input
+          className="addedscore"
+          type="number"
+          style={{ width: '70px' }}
+          onChange={handleAddedScoreChange}
+        />
+        <button className="confirm" onClick={handleScoreAdd}>
+          확인
+        </button>
       </div>
 
       {/*결과 보기*/}
-      <button
+      {/* <button
         className="viewresult"
         type="button"
         onClick={() => {
@@ -187,7 +204,7 @@ function App() {
       </button>
       <div className={`result animated ${resultVisibility ? '' : 'hidden'}`}>
         결과
-      </div>
+      </div> */}
     </>
   );
 }

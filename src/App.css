@@ -32,4 +32,140 @@
 
 .gray {
   background-color: gray;
+  color: white;
+}
+
+.board {
+  border-radius: 30px;
+  border-width: 3px;
+  border-color: #1a1a1a;
+  border-style: solid;
+  margin: 15px;
+  padding: 5px;
+  position: absolute;
+}
+
+.teamli {
+  margin: 3px;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.teamlist {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  top: 110px;
+  left: 10px;
+}
+
+.teamName {
+  margin-left: 15px;
+  width: 140px;
+}
+
+.red {
+  color: white;
+}
+.black {
+  color: white;
+}
+.blue {
+  color: white;
+}
+.green {
+  color: white;
+}
+
+.score {
+  margin-right: 15px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.trainnum {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: gray;
+  top: 10px;
+  left: 10px;
+}
+.teamtrainnum {
+  padding: 0;
+  margin: 3px;
+  width: 10px;
+  height: 20px;
+  border-radius: 15px;
+  display: flex; /* 플렉스 박스로 설정 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.tt {
+  font-weight: 600;
+  font-size: larger;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.currentplayer {
+  font-size: larger;
+  font-size: 800;
+}
+
+.ttt {
+  margin-bottom: 8px;
+}
+
+.control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: center;
+  border-radius: 35px;
+  border-width: 3px;
+  border-color: #1a1a1a;
+  border-style: solid;
+  margin: 15px;
+  padding: 10px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.raneDropdown {
+  margin-right: 30px;
+}
+
+.confirm {
+  display: flex;
+  width: 100px;
+  height: 30px;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;
+  font-size: 17px;
+}
+
+.stopwatch {
+  bottom: 10px;
+  left: 10px;
+  display: block;
+  width: 200px;
+  background-color: gray;
+  color: white;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;
+}
+
+.currentplayer {
+  top: 10px;
+  right: 10px;
+  width: 200px;
 }
