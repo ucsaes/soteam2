@@ -52,5 +52,5 @@
 }
 
 .r_rainbow {
-  background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(rgb(255, 140, 0), yellow, rgb(238, 0, 255));
 }

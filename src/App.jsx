@@ -8,6 +8,7 @@ import './traincolor.css';
 
 import Stopwatch from './Stopwatch';
 import RaneGroup from './raneGroup';
+import Cordinate from './debugging/cordinate';
 import Card from './Card';
 
 function App() {
@@ -39,11 +40,25 @@ function App() {
   const [addedScore, setAddedScore] = useState(0);
 
   const [resultVisibility, setResultVisibiity] = useState(false);
-  // rane배치 정보 list
+  // rane배치 정보 list /// 여기야 휘문아!!!!!!!!!!!!!!!!
+  /////////////////////////////////////////////////////
+  // 선로하나 => [색코드, [x좌표, y좌표, 기울기(degree)], [x좌표, y좌표, 기울기(degree)], ...]
+  // 색코드:
+  // 회색: -1
+  // 빨강: -2
+  // 주황: -3
+  // 노랑: -4
+  // 초록: -5
+  // 파랑: -6
+  // 핑크: -7
+  // 검정: -8
+  // 하양: -9
   const [ranes, setRanes] = useState([
-    [-2, [10, 10, 90], [20, 20, 45], [30, 30, 20]],
+    [-3, [27.8, 34.3, -45], [26.0, 36.2, -45], [24.6, 37.9, -45]],
     [-1, [13, 20, 110], [85, 20, 40]],
   ]);
+
+  /////////////////////////////////////////////////////
 
   const handleTeamNameChange = (e, i) => {
     let imsi = teamNames;
@@ -75,6 +90,7 @@ function App() {
 
   return (
     <>
+      <Cordinate></Cordinate>
       <div className="board carddeck">
         <Card></Card>
         <Card></Card>

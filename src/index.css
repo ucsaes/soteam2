@@ -32,6 +32,7 @@ body {
   height: 100vh;
   background: url(/20250117.png) no-repeat center;
   background-size: cover;
+  z-index: 100;
 }
 
 h1 {
