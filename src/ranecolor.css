@@ -1,0 +1,56 @@
+.r_ {
+  border-width: 3px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-style: dotted;
+}
+
+.r_red {
+  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 189, 189);
+}
+
+.r_orange {
+  background-color: rgb(255, 166, 0);
+  border-color: white;
+}
+
+.r_yellow {
+  background-color: yellow;
+  border-color: rgb(0, 0, 0);
+}
+
+.r_green {
+  background-color: green;
+  border-color: white;
+}
+
+.r_blue {
+  background-color: blue;
+  border-color: white;
+}
+
+.r_pink {
+  background-color: pink;
+  border-color: rgb(0, 0, 0);
+}
+
+.r_black {
+  background-color: black;
+  border-color: rgb(255, 255, 255);
+}
+
+.r_white {
+  background-color: white;
+  border-color: rgb(0, 0, 0);
+}
+
+.r_gray {
+  background-color: rgb(136, 136, 136);
+  border-color: rgb(255, 255, 255);
+}
+
+.r_rainbow {
+  background-image: linear-gradient(red, blue);
+}

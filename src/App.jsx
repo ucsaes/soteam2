@@ -3,13 +3,16 @@ import classNames from 'classnames';
 import './App.css';
 import './resultFanfare.css';
 import './trainnum.css';
+import './ranecolor.css';
+import './traincolor.css';
 
 import Stopwatch from './Stopwatch';
 import RaneGroup from './raneGroup';
+import Card from './Card';
 
 function App() {
   const [teamNames, setTeamNames] = useState(['1', '2', '3', '4', '5']);
-  const [trainNum, setTrainNum] = useState([45, 45, 45, 45, 45]);
+  const [trainNum, setTrainNum] = useState([40, 40, 40, 40, 40]);
   const [scores, setScores] = useState([0, 0, 0, 0, 0]);
 
   const [currentPlayer, setCurrentPlayer] = useState(-1);
@@ -38,15 +41,8 @@ function App() {
   const [resultVisibility, setResultVisibiity] = useState(false);
   // rane배치 정보 list
   const [ranes, setRanes] = useState([
-    [
-      [10, 10, 90],
-      [20, 20, 45],
-      [30, 30, 20],
-    ],
-    [
-      [13, 20, 110],
-      [85, 20, 40],
-    ],
+    [-2, [10, 10, 90], [20, 20, 45], [30, 30, 20]],
+    [-1, [13, 20, 110], [85, 20, 40]],
   ]);
 
   const handleTeamNameChange = (e, i) => {
@@ -56,10 +52,12 @@ function App() {
   };
 
   const handleScoreDropdownChange = (e) => {
+    setControlPlayer(Number(e.target.value));
     setScoreDropdown(Number(e.target.value));
   };
 
   const handleRaneDropdownChange = (e) => {
+    setControlPlayer(Number(e.target.value));
     setRaneDropdown(Number(e.target.value));
   };
 
@@ -77,6 +75,13 @@ function App() {
 
   return (
     <>
+      <div className="board carddeck">
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </div>
       {ranes.map((item, index) => (
         <RaneGroup
           raneList={item}
@@ -88,7 +93,7 @@ function App() {
         ></RaneGroup>
       ))}
       <div className="board teamlist">
-        <div className="teamli red" onClick={() => setCurrentPlayer(0)}>
+        <div className="teamli red">
           <input
             type="text"
             className="teamName"
@@ -96,7 +101,7 @@ function App() {
           />
           <span className="score">{scores[0]}점</span>
         </div>
-        <div className="teamli yellow" onClick={() => setCurrentPlayer(1)}>
+        <div className="teamli yellow">
           <input
             type="text"
             className="teamName"
@@ -104,7 +109,7 @@ function App() {
           />
           <span className="score">{scores[1]}점</span>
         </div>
-        <div className="teamli green" onClick={() => setCurrentPlayer(2)}>
+        <div className="teamli green">
           <input
             type="text"
             className="teamName"
@@ -112,7 +117,7 @@ function App() {
           />
           <span className="score">{scores[2]}점</span>
         </div>
-        <div className="teamli blue" onClick={() => setCurrentPlayer(3)}>
+        <div className="teamli blue">
           <input
             type="text"
             className="teamName"
@@ -120,7 +125,7 @@ function App() {
           />
           <span className="score">{scores[3]}점</span>
         </div>
-        <div className="teamli black" onClick={() => setCurrentPlayer(4)}>
+        <div className="teamli black">
           <input
             type="text"
             className="teamName"
@@ -143,15 +148,16 @@ function App() {
       </div>
 
       {/*차례 표시*/}
-      <div className={`board currentplayer ${currentColor}`}>
+      <div className={`board currentplayer ${controlColor}`}>
         <div className="ttt">현재차례</div>
-        <div className={`${currentPlayer === -1 ? 'hidden tt' : 'tt'}`}>
-          {teamNames[currentPlayer]}
+        <div className={`${controlPlayer === -1 ? 'hidden tt' : 'tt'}`}>
+          {teamNames[controlPlayer]}
         </div>
       </div>
 
       {/*조작부*/}
       <div className={`board control ${controlColor}`}>
+        <div className="manual">차례:</div>
         <select
           className="raneDropdown"
           value={raneDropdown}
@@ -167,6 +173,7 @@ function App() {
           <option value="3">{teamNames[3]}</option>
           <option value="4">{teamNames[4]}</option>
         </select>
+        <div className="manual">점수 수동 추가:</div>
         <select
           className="scoreDropdown"
           value={scoreDropdown}

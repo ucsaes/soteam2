@@ -1,0 +1,29 @@
+.trn {
+  box-shadow: inset 1px 3px 5px 0px rgba(255, 255, 255, 0.428),
+    inset -1px -3px 5px 0px rgba(0, 0, 0, 0.175);
+  border-radius: 0px;
+}
+
+.red {
+  background-color: rgb(255, 51, 0);
+}
+
+.yellow {
+  background-color: rgb(255, 230, 0);
+}
+
+.green {
+  background-color: rgb(15, 195, 2);
+}
+
+.blue {
+  background-color: rgb(2, 51, 157);
+}
+
+.black {
+  background-color: black;
+}
+
+.gray {
+  background-color: rgb(99, 97, 97);
+}

@@ -4,7 +4,17 @@ import './rane.css';
 
 function Rane({ x, y, r, color }) {
   const currentColor = classNames('rane', {
-    gray: color === -1,
+    trn: color >= 0,
+    r_: color < 0,
+    r_gray: color === -1,
+    r_red: color === -2,
+    r_orange: color === -3,
+    r_yellow: color === -4,
+    r_green: color === -5,
+    r_blue: color === -6,
+    r_pink: color === -7,
+    r_black: color === -8,
+    r_white: color === -9,
     red: color === 0,
     yellow: color === 1,
     green: color === 2,
@@ -16,8 +26,8 @@ function Rane({ x, y, r, color }) {
     <div
       style={{
         position: 'absolute',
-        top: `calc(${y}% - 10px)`,
-        left: `calc(${x}% - 35px)`,
+        top: `calc(${y}% - 6.5px)`,
+        left: `calc(${x}% - 20px)`,
         transform: `rotate(${r}deg)`,
       }}
       className={currentColor}
@@ -54,13 +64,14 @@ function RaneGroup({
   scores,
   setScores,
 }) {
-  const [color, setColor] = useState(-1);
-  const length = raneList.length;
-  const score = scoreMap(raneList.length);
+  const defaultColor = raneList[0];
+  const [color, setColor] = useState(defaultColor);
+  const length = raneList.length - 1;
+  const score = scoreMap(length);
   const colorNew = () => {
     // score 조정
     const newScores = [...scores];
-    if (color !== -1) {
+    if (color >= 0) {
       newScores[color] -= score;
     }
     newScores[newColor] += score;
@@ -68,11 +79,14 @@ function RaneGroup({
 
     // trainnum 조정
     const newTrainNum = [...trainNum];
-    if (color !== -1) {
+    if (color >= 0) {
       newTrainNum[color] += length;
     }
     newTrainNum[newColor] -= length;
     setTrainNum(newTrainNum);
+    if (newColor === -1) {
+      newColor = defaultColor;
+    }
 
     setColor(newColor);
   };
