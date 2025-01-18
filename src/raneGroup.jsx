@@ -69,7 +69,6 @@ function RaneGroup({
   const length = raneList.length - 1;
   const score = scoreMap(length);
   const colorNew = () => {
-    console.log(newColor);
     if (!newColor) {
       return;
     }
