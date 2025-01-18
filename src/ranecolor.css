@@ -3,7 +3,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-style: dotted;
+  border-style: solid;
 }
 
 .r_red {

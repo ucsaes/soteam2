@@ -26,8 +26,8 @@ function Rane({ x, y, r, color }) {
     <div
       style={{
         position: 'absolute',
-        top: `calc(${y}% - 6.5px)`,
-        left: `calc(${x}% - 20px)`,
+        top: `calc(${y}% - 7px)`,
+        left: `calc(${x}% - 17px)`,
         transform: `rotate(${r}deg)`,
       }}
       className={currentColor}
@@ -94,9 +94,12 @@ function RaneGroup({
   return (
     <>
       <div className="raneGroup" onClick={colorNew}>
-        {raneList.map((item, index) => (
-          <Rane x={item[0]} y={item[1]} r={item[2]} color={color}></Rane>
-        ))}
+        {raneList.map(
+          (item, index) =>
+            index !== 0 && (
+              <Rane x={item[0]} y={item[1]} r={item[2]} color={color}></Rane>
+            )
+        )}
       </div>
     </>
   );
