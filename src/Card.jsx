@@ -22,7 +22,24 @@ function Card() {
     r_white: color === 7,
   });
 
-  return <div className={currentColor} onClick={handleButtonClick}></div>;
+  const handleColorChange = (e) => {
+    setColor(Number(e.target.value));
+  };
+
+  return (
+    <div className="cardbox">
+      <div className={currentColor}></div>
+      <div className="cSelect r_red" onClick={() => setColor(0)}></div>
+      <div className="cSelect r_orange" onClick={() => setColor(1)}></div>
+      <div className="cSelect r_yellow" onClick={() => setColor(2)}></div>
+      <div className="cSelect r_green" onClick={() => setColor(3)}></div>
+      <div className="cSelect r_blue" onClick={() => setColor(4)}></div>
+      <div className="cSelect r_pink" onClick={() => setColor(5)}></div>
+      <div className="cSelect r_white" onClick={() => setColor(6)}></div>
+      <div className="cSelect r_black" onClick={() => setColor(7)}></div>
+      <div className="cSelect r_rainbow" onClick={() => setColor(8)}></div>
+    </div>
+  );
 }
 
 export default Card;

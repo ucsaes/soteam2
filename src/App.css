@@ -168,6 +168,7 @@
 .carddeck {
   display: flex;
   flex-direction: row;
+  height: 125px;
   top: 10px;
   right: 10px;
   background-color: grey;

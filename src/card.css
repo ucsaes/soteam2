@@ -1,3 +1,9 @@
+.cardbox {
+  display: inline-block;
+  align-items: center;
+  justify-items: center;
+}
+
 .card {
   width: 60px;
   height: 100px;
@@ -5,4 +11,31 @@
   border-width: 3px;
   border-radius: 8px;
   margin: 10px;
+}
+
+.cSelect {
+  width: 80%;
+  height: 15%;
+  box-sizing: border-box;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: black;
+  display: none;
+}
+
+.cSelect.r_rainbow {
+  background-image: linear-gradient(
+    90deg,
+    rgb(255, 115, 255),
+    rgb(126, 126, 218),
+    rgb(183, 238, 253),
+    rgb(163, 220, 157),
+    rgb(225, 225, 103),
+    rgb(220, 188, 129),
+    rgb(233, 133, 133)
+  );
+}
+.cardbox:hover > .cSelect {
+  display: block;
 }
