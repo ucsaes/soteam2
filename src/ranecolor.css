@@ -1,5 +1,5 @@
 .r_ {
-  border-width: 2px;
+  border-width: 3px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -52,5 +52,14 @@
 }
 
 .r_rainbow {
-  background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(
+    rgb(255, 115, 255),
+    rgb(126, 126, 218),
+    rgb(183, 238, 253),
+    rgb(163, 220, 157),
+    rgb(225, 225, 103),
+    rgb(220, 188, 129),
+    rgb(233, 133, 133)
+  );
+  border-color: white;
 }
