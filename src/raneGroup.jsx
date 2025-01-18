@@ -69,7 +69,7 @@ function RaneGroup({
   const length = raneList.length - 1;
   const score = scoreMap(length);
   const colorNew = () => {
-    if (!newColor) {
+    if (!newColor && newColor !== 0) {
       return;
     }
     // score 조정

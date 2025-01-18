@@ -15,15 +15,6 @@ function App() {
   const [trainNum, setTrainNum] = useState([40, 40, 40, 40, 40]);
   const [scores, setScores] = useState([0, 0, 0, 0, 0]);
 
-  const [currentPlayer, setCurrentPlayer] = useState(-1);
-  const currentColor = classNames({
-    gray: currentPlayer === -1,
-    red: currentPlayer === 0,
-    yellow: currentPlayer === 1,
-    green: currentPlayer === 2,
-    blue: currentPlayer === 3,
-    black: currentPlayer === 4,
-  });
   const [controlPlayer, setControlPlayer] = useState(-1);
   const controlColor = classNames({
     gray: controlPlayer === -1,
@@ -381,7 +372,6 @@ function App() {
 
   const handleRaneDropdownChange = (e) => {
     setControlPlayer(Number(e.target.value));
-    setRaneDropdown(Number(e.target.value));
   };
 
   const handleAddedScoreChange = (e) => {
@@ -408,7 +398,7 @@ function App() {
       {ranes.map((item, index) => (
         <RaneGroup
           raneList={item}
-          newColor={raneDropdown}
+          newColor={controlPlayer}
           trainNum={trainNum}
           setTrainNum={setTrainNum}
           scores={scores}
@@ -471,7 +461,12 @@ function App() {
       </div>
 
       {/*차례 표시*/}
-      <div className={`board currentplayer ${controlColor}`}>
+      <div
+        className={`board currentplayer ${controlColor}`}
+        onClick={() => {
+          setControlPlayer((controlPlayer + 1) % 5);
+        }}
+      >
         <div className="ttt">현재차례</div>
         <div className={`${controlPlayer === -1 ? 'hidden tt' : 'tt'}`}>
           {teamNames[controlPlayer]}
@@ -483,7 +478,7 @@ function App() {
         <div className="manual">차례:</div>
         <select
           className="raneDropdown"
-          value={raneDropdown}
+          value={controlPlayer}
           onChange={handleRaneDropdownChange}
         >
           <option value="" disabled>
