@@ -26,9 +26,9 @@ function Rane({ x, y, r, color }) {
     <div
       style={{
         position: 'absolute',
-        top: `calc(${y}% - 7px)`,
-        left: `calc(${x}% - 17px)`,
-        transform: `rotate(${r}deg)`,
+        top: `calc(${y}%)`,
+        left: `calc(${x}%)`,
+        transform: `translate(-50%, -50%) rotate(${r}deg)`,
       }}
       className={currentColor}
     ></div>

@@ -89,7 +89,7 @@ function App() {
     ],
     [-2, [24.4, 45.45, 30], [26.35, 47.5, 30], [28.25, 49.6, 30]],
     [-2, [34.75, 44.25, 317], [33.0, 47.1, 317]],
-    [-2, [35.5, 45.7, 317], [33.75, 48.6, 317]],
+    [-3, [35.5, 45.7, 317], [33.75, 48.6, 317]],
     [-2, [45.7, 45.2, 287], [45.1, 48.4, 287], [44.45, 51.8, 287]],
     [
       -2,
@@ -381,7 +381,7 @@ function App() {
 
   return (
     <>
-      <div className="board carddeck">
+      <div className="board carddeck gray">
         <Card></Card>
         <Card></Card>
         <Card></Card>
@@ -398,7 +398,7 @@ function App() {
           setScores={setScores}
         ></RaneGroup>
       ))}
-      <div className="board teamlist">
+      <div className="board teamlist gray">
         <div className="teamli red">
           <input
             type="text"
@@ -445,7 +445,7 @@ function App() {
       <Stopwatch></Stopwatch>
 
       {/*기차개수*/}
-      <div className="board trainnum">
+      <div className="board trainnum gray">
         <div className="teamtrainnum red">{trainNum[0]}</div>
         <div className="teamtrainnum yellow">{trainNum[1]}</div>
         <div className="teamtrainnum green">{trainNum[2]}</div>
