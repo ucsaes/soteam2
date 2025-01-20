@@ -35,8 +35,8 @@ function Card() {
       <div className="cSelect r_green" onClick={() => setColor(3)}></div>
       <div className="cSelect r_blue" onClick={() => setColor(4)}></div>
       <div className="cSelect r_pink" onClick={() => setColor(5)}></div>
-      <div className="cSelect r_white" onClick={() => setColor(6)}></div>
-      <div className="cSelect r_black" onClick={() => setColor(7)}></div>
+      <div className="cSelect r_white" onClick={() => setColor(7)}></div>
+      <div className="cSelect r_black" onClick={() => setColor(6)}></div>
       <div className="cSelect r_rainbow" onClick={() => setColor(8)}></div>
     </div>
   );
