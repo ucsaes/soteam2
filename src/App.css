@@ -25,14 +25,15 @@
 .teamli {
   margin: 3px;
   border-radius: 17px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: x-large;
   justify-content: space-between;
 }
 
 .teamlist {
-  width: 240px;
   display: flex;
   flex-direction: column;
   background-color: gray;
@@ -42,7 +43,8 @@
 
 .teamName {
   margin-left: 15px;
-  width: 140px;
+  width: 200px;
+  font-size: large;
 }
 
 .red {
@@ -65,7 +67,7 @@
 }
 .score {
   margin-right: 15px;
-  font-size: small;
+  margin-left: 20px;
   font-weight: 600;
 }
 
@@ -89,6 +91,7 @@
   background-color: gray;
   top: 10px;
   left: 10px;
+  font-size: large;
 }
 .teamtrainnum {
   padding: 0;
@@ -98,7 +101,6 @@
   display: flex; /* 플렉스 박스로 설정 */
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center;
-  font-size: smaller;
   font-weight: 600;
 }
 
@@ -110,8 +112,9 @@
 }
 
 .currentplayer {
-  border-width: 10px;
-  border-style: outset;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black !important;
   font-size: larger;
   font-size: 800;
 }

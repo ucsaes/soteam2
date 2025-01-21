@@ -27,7 +27,8 @@ function App() {
 
   const [raneDropdown, setRaneDropdown] = useState('');
   const [scoreDropdown, setScoreDropdown] = useState('');
-  const [addedScore, setAddedScore] = useState(0);
+  const [addedScore, setAddedScore] = useState(null);
+  const [emptyScore, setEmptyScore] = useState('');
 
   const [resultVisibility, setResultVisibiity] = useState(false);
   // rane배치 정보 list
@@ -375,13 +376,15 @@ function App() {
   };
 
   const handleAddedScoreChange = (e) => {
-    setAddedScore(Number(e.target.value));
+    setEmptyScore(Number(e.target.value));
   };
 
   const handleScoreAdd = () => {
+    setAddedScore(emptyScore);
+    setEmptyScore('');
     if (scoreDropdown !== -1) {
       const newScores = [...scores];
-      newScores[scoreDropdown] += addedScore;
+      newScores[scoreDropdown] += emptyScore;
       setScores(newScores);
     }
   };
@@ -453,11 +456,11 @@ function App() {
 
       {/*기차개수*/}
       <div className="board trainnum gray">
-        <div className="teamtrainnum red">{trainNum[0]}</div>
-        <div className="teamtrainnum yellow">{trainNum[1]}</div>
-        <div className="teamtrainnum green">{trainNum[2]}</div>
-        <div className="teamtrainnum blue">{trainNum[3]}</div>
-        <div className="teamtrainnum black">{trainNum[4]}</div>
+        <div className="teamtrainnum red">{trainNum[0]}개</div>
+        <div className="teamtrainnum yellow">{trainNum[1]}개</div>
+        <div className="teamtrainnum green">{trainNum[2]}개</div>
+        <div className="teamtrainnum blue">{trainNum[3]}개</div>
+        <div className="teamtrainnum black">{trainNum[4]}개</div>
       </div>
 
       {/*차례 표시*/}
@@ -509,6 +512,7 @@ function App() {
         <input
           className="addedscore"
           type="number"
+          value={emptyScore}
           style={{ width: '70px' }}
           onChange={handleAddedScoreChange}
         />

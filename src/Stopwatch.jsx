@@ -30,7 +30,9 @@ function Stopwatch() {
   return (
     <div className="board stopwatch gray">
       <div className="ttt">스톱워치</div>
-      <div className="tt">{time} 초</div>
+      <div className="tt">
+        {Math.floor(time / 60)} 분 {time % 60} 초
+      </div>
       <button onClick={handleButtonClick}>
         {status === 'running'
           ? '정지'
