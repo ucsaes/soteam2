@@ -48,20 +48,6 @@
     "vite": "^6.0.5"
   },
   "config": {
-    "forge": {
-      "packagerConfig": {
-        "platform": "win32",
-        "arch": "x64"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "빌드업! 카이스트",
-            "setupExe": "build-up-kaist-v0.0.2.exe"
-          }
-        }
-      ]
-    }
+    "forge": "./electron/forge.config.js"
   }
 }

@@ -3,13 +3,18 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
   packagerConfig: {
+    platform: "win32",
+    arch: "x64",
     asar: true,
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        name: "빌드업! 카이스트",
+        setupExe: "build-up-kaist-v0.0.2.exe"
+      },
     },
     {
       name: '@electron-forge/maker-zip',
