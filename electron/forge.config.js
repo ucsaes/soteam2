@@ -1,6 +1,5 @@
 module.exports = {
   packagerConfig: {
-    platform: "win32",
     arch: "x64",
   },
   makers: [
