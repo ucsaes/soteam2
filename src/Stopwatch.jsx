@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import timerIcon from './assets/timer.svg';
 
 function Stopwatch() {
   const [time, setTime] = useState(0); // 경과 시간 (초 단위)
   const [status, setStatus] = useState('stopped'); // 상태: stopped, running
+  const [isExpanded, setIsExpanded] = useState(false); // 펼쳐진 상태인지 여부
 
   useEffect(() => {
     let timer;
@@ -27,19 +29,38 @@ function Stopwatch() {
     }
   };
 
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
-    <div className="board stopwatch gray">
-      <div className="ttt">스톱워치</div>
-      <div className="tt">
-        {Math.floor(time / 60)} 분 {time % 60} 초
-      </div>
-      <button onClick={handleButtonClick}>
-        {status === 'running'
-          ? '정지'
-          : status === 'stopped'
-          ? '초기화 후 시작'
-          : '시작'}
-      </button>
+    <div className="stopwatch-container">
+      {!isExpanded && (
+        <button className="circle-button" onClick={toggleExpand}>
+          <img src={timerIcon} alt="Timer Icon" width="36px" height="36px" />
+        </button>
+      )}
+
+      {isExpanded && (
+        <div className="board stopwatch gray">
+          <div className="ttt">
+            <span><b>스톱워치</b></span>
+            <button className="close-button" onClick={toggleExpand}>
+              X
+            </button>
+          </div>
+          <div className="tt">
+            {Math.floor(time / 60)} 분 {time % 60} 초
+          </div>
+          <button style={{ color: "white", fontSize: "14px" }} onClick={handleButtonClick}>
+            {status === 'running'
+              ? '정지'
+              : status === 'stopped'
+              ? '초기화 후 시작'
+              : '시작'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

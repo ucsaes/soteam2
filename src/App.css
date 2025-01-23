@@ -119,7 +119,7 @@
 .tt {
   font-weight: 600;
   font-size: larger;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -132,7 +132,12 @@
 }
 
 .ttt {
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 24px;
 }
 
 .control {
@@ -163,10 +168,51 @@
   font-size: 17px;
 }
 
+.stopwatch-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.circle-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* 동그란 버튼 */
+  background-color: grey;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-button:hover {
+  color: #000; /* 호버 시 색상 변경 */
+}
+
 .stopwatch {
-  bottom: 10px;
-  left: 10px;
-  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
   width: 200px;
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center;
