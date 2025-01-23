@@ -377,7 +377,13 @@ function App() {
 
   const handleRaneDropdownChange = (e) => {
     setControlPlayer(Number(e.target.value));
+    setEmptyScore('');
   };
+
+  const handlePlayerChange = () => {
+    setControlPlayer((controlPlayer + 1) % 5);
+    setEmptyScore('');
+  }
 
   const handleAddedScoreChange = (e) => {
     setEmptyScore(Number(e.target.value));
@@ -474,9 +480,7 @@ function App() {
       {/*차례 표시*/}
       <div
         className={`board currentplayer ${controlColor}`}
-        onClick={() => {
-          setControlPlayer((controlPlayer + 1) % 5);
-        }}
+        onClick={handlePlayerChange}
       >
         <div className="ttt">현재차례</div>
         <div className={`${controlPlayer === -1 ? 'hidden tt' : 'tt'}`}>
