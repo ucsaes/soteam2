@@ -12,7 +12,7 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: "빌드업! 카이스트",
+        name: "build-up-kaist",
         setupExe: "build-up-kaist-v0.0.2.exe"
       },
     },
