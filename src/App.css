@@ -72,8 +72,25 @@
   color: white;
 }
 
+.open-button {
+  position: fixed; /* 화면 고정 */
+  bottom: 20px;
+  right: 20px; /* 화면의 오른쪽 아래에 배치 */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* 동그란 버튼 */
+  background-color: grey;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .manual {
-  font-size: small;
+  font-size: medium;
   font-weight: 500;
   margin-right: 10px;
 }
@@ -161,11 +178,14 @@
 
 .confirm {
   display: flex;
-  width: 80px;
+  width: 70px;
   height: 30px;
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center;
-  font-size: 17px;
+  font-size: 14px;
+  color: white;
+  margin-left: 10px;
+  margin-right: 12px;
 }
 
 .stopwatch-container {
