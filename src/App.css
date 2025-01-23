@@ -50,13 +50,25 @@
 .red {
   color: white;
 }
+.red input {
+  color: white;
+}
 .black {
+  color: white;
+}
+.black input {
   color: white;
 }
 .blue {
   color: white;
 }
+.blue input {
+  color: white;
+}
 .green {
+  color: white;
+}
+.green input {
   color: white;
 }
 
