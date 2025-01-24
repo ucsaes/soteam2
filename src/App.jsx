@@ -393,9 +393,9 @@ function App() {
   const handleScoreAdd = () => {
     setAddedScore(emptyScore);
     setEmptyScore('');
-    if (scoreDropdown !== -1) {
+    if (controlPlayer !== -1) {
       const newScores = [...scores];
-      newScores[scoreDropdown] += emptyScore;
+      newScores[controlPlayer] += emptyScore;
       setScores(newScores);
     }
   };
