@@ -24,6 +24,7 @@ function App() {
     blue: controlPlayer === 3,
     black: controlPlayer === 4,
   });
+  const [isCtrlVisible, setIsCtrlVisible] = useState(false);
 
   const [raneDropdown, setRaneDropdown] = useState('');
   const [scoreDropdown, setScoreDropdown] = useState('');
@@ -477,7 +478,11 @@ function App() {
       </div>
 
       {/*조작부*/}
-      <div className={`board control ${controlColor}`}>
+      <div
+        className={`board control ${controlColor} ${
+          isCtrlVisible ? '' : 'hidden'
+        }`}
+      >
         <div className="manual">차례:</div>
         <select
           className="raneDropdown"
@@ -519,6 +524,15 @@ function App() {
         <button className="confirm" onClick={handleScoreAdd}>
           확인
         </button>
+      </div>
+
+      <div
+        className={`board control ${controlColor}`}
+        onClick={() => {
+          setIsCtrlVisible(!isCtrlVisible);
+        }}
+      >
+        {isCtrlVisible ? '-' : '+'}
       </div>
 
       {/*결과 보기*/}
