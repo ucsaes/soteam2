@@ -1,9 +1,9 @@
 {
-  "name": "soteam2",
+  "name": "build-up-kaist",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.2",
   "author": "ucsaes and sungjoonim",
-  "description": "An electron app of soteam2",
+  "description": "An electron app of Build Up! KAIST",
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
@@ -57,8 +57,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "soteam2",
-            "setupExe": "Soteam2.exe"
+            "name": "build-up-kaist",
+            "setupExe": "build-up-kaist-v0.0.2.exe"
           }
         }
       ]
