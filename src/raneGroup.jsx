@@ -108,7 +108,13 @@ function RaneGroup({
         {raneList.map(
           (item, index) =>
             index !== 0 && (
-              <Rane x={item[0]} y={item[1]} r={item[2]} color={color}></Rane>
+              <Rane
+                x={item[0]}
+                y={item[1]}
+                r={item[2]}
+                color={color}
+                key={index}
+              ></Rane>
             )
         )}
       </div>

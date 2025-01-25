@@ -119,28 +119,6 @@ select,
   color: black;
 }
 
-.trainnum {
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: gray;
-  top: 10px;
-  left: 10px;
-  font-size: x-large;
-  padding: 10px;
-}
-.teamtrainnum {
-  padding: 0;
-  height: 10%;
-  border-radius: 15px;
-  display: flex; /* 플렉스 박스로 설정 */
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center;
-  font-weight: 600;
-  padding: 10px;
-}
-
 .tt {
   font-weight: 600;
   font-size: larger;

@@ -1,7 +1,7 @@
 {
   "name": "build-up-kaist",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": "ucsaes and sungjoonim",
   "description": "An electron app of Build Up! KAIST",
   "type": "module",

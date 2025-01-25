@@ -1,12 +1,26 @@
 .trainnum {
   display: flex;
-  flex-direction: row; /* 세로로 정렬 */
-}
-
-.teamtrainnum {
-  width: 20%;
-  text-align: center;
+  flex-direction: row;
   align-items: center;
-  padding: 20px;
-  margin: 10px;
+  background-color: gray;
+  top: 10px;
+  left: 10px;
+  font-size: x-large;
+  font-weight: 600;
+  padding: 5px;
+}
+.teamtrainnum {
+  border-radius: 15px;
+  border-width: 0px;
+  width: 63px;
+  display: block; /* 플렉스 박스로 설정 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

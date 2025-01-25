@@ -421,6 +421,7 @@ function App() {
           setTrainNum={setTrainNum}
           scores={scores}
           setScores={setScores}
+          key={index}
         ></RaneGroup>
       ))}
       <div className="board teamlist gray">
