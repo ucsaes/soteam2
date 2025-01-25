@@ -489,6 +489,76 @@ function App() {
         </div>
       </div>
 
+      {/*선로 길이 당 점수인포*/}
+      <table className="board infoTable">
+        <thead>
+          <tr>
+            <th>길이</th>
+            <th></th>
+            <th>점수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+            </td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+            </td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+            </td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+            </td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+            </td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td className="tableTrains">
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+              <div className="tableTrain"></div>
+            </td>
+            <td>15</td>
+          </tr>
+        </tbody>
+      </table>
+
       {/*조작부*/}
       <div>
         {!isManualExpanded && (

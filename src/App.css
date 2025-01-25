@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   background-color: gray;
-  top: 70px;
+  top: 80px;
   left: 10px;
 }
 
@@ -100,6 +100,13 @@
   font-weight: 600;
 }
 
+select,
+.addedscore {
+  background-color: white !important;
+  border-width: 0px;
+  color: black !important;
+}
+
 .teamName {
   background-color: rgba(255, 255, 255, 0.229);
   border-radius: 5px;
@@ -120,17 +127,18 @@
   background-color: gray;
   top: 10px;
   left: 10px;
-  font-size: large;
+  font-size: x-large;
+  padding: 10px;
 }
 .teamtrainnum {
   padding: 0;
-  width: 10px;
   height: 10%;
   border-radius: 15px;
   display: flex; /* 플렉스 박스로 설정 */
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center;
   font-weight: 600;
+  padding: 10px;
 }
 
 .tt {
@@ -253,4 +261,48 @@
   top: 10px;
   right: 10px;
   background-color: grey;
+}
+
+table {
+  width: 270px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+th {
+  background-color: #efefef;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f3f3f3;
+}
+
+.tableTrain {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  background-color: brown;
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+.tableTrains {
+  text-align: left;
+}
+
+.infoTable {
+  top: 150px;
+  right: 10px;
+  justify-content: left;
+  z-index: 50;
 }
