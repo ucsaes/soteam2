@@ -74,20 +74,28 @@ function RaneGroup({
     }
     // score 조정
     const newScores = [...scores];
-    if (color >= 0) {
+    if (newColor === color) {
       newScores[color] -= score;
+    } else {
+      if (color >= 0) {
+        newScores[color] -= score;
+      }
+      newScores[newColor] += score;
     }
-    newScores[newColor] += score;
     setScores(newScores);
 
     // trainnum 조정
     const newTrainNum = [...trainNum];
-    if (color >= 0) {
+    if (newColor === color) {
       newTrainNum[color] += length;
+    } else {
+      if (color >= 0) {
+        newTrainNum[color] += length;
+      }
+      newTrainNum[newColor] -= length;
     }
-    newTrainNum[newColor] -= length;
     setTrainNum(newTrainNum);
-    if (newColor === -1) {
+    if (newColor === -1 || newColor === color) {
       newColor = defaultColor;
     }
 
