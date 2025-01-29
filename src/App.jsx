@@ -387,15 +387,18 @@ function App() {
   };
 
   const handleAddedScoreChange = (e) => {
-    setEmptyScore(Number(e.target.value));
+    const value = e.target.value;
+    if (value === '' || !isNaN(value)) {
+      setEmptyScore(value);
+    }
   };
 
   const handleScoreAdd = () => {
-    setAddedScore(emptyScore);
+    setAddedScore(Number(emptyScore));
     setEmptyScore('');
     if (controlPlayer !== -1) {
       const newScores = [...scores];
-      newScores[controlPlayer] += emptyScore;
+      newScores[controlPlayer] += Number(emptyScore);
       setScores(newScores);
     }
   };
@@ -603,7 +606,7 @@ function App() {
             </select> */}
             <input
               className="addedscore"
-              type="number"
+              type="text"
               value={emptyScore}
               style={{ width: '70px' }}
               onChange={handleAddedScoreChange}
