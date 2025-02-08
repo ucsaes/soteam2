@@ -388,7 +388,7 @@ function App() {
 
   const handleAddedScoreChange = (e) => {
     const value = e.target.value;
-    if (value === '' || !isNaN(value)) {
+    if (value === '' || !isNaN(value) || value === '-') {
       setEmptyScore(value);
     }
   };
