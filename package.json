@@ -1,7 +1,7 @@
 {
   "name": "build-up-kaist",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "ucsaes and sungjoonim",
   "description": "An electron app of Build Up! KAIST",
   "type": "module",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/maker-dmg": "^7.6.1",
     "@electron-forge/maker-rpm": "^7.6.0",
     "@electron-forge/maker-squirrel": "^7.6.0",
     "@electron-forge/maker-zip": "^7.6.0",
@@ -58,7 +59,13 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "build-up-kaist",
-            "setupExe": "build-up-kaist-v0.0.2.exe"
+            "setupExe": "build-up-kaist-v0.0.5.exe"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "build-up-kaist-v0.0.5"
           }
         }
       ]
