@@ -1,8 +1,12 @@
 #root {
-  max-width: 1280px;
+  position: fixed;
+  width: 100vw;
+  height: 56.25vw;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   text-align: center;
+  background: url(/v_6.jpg) no-repeat center;
+  background-size: cover;
 }
 
 .hidden {

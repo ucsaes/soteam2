@@ -30,8 +30,7 @@ body {
   overflow-x: auto;
   align-items: center;
   height: 100vh;
-  background: url(/v_6.jpg) no-repeat center;
-  background-size: cover;
+  background-color: #ffffff;
 }
 
 h1 {
