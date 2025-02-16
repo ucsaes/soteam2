@@ -21,3 +21,9 @@ npm run make -- --arch=arm64
 
 ### ⚠️ **Caution**
 Windows Application 은 Windows PC 에서, macOS Application 은 macOS 에서 명령어를 실행해주셔야 합니다.
+
+## Standalone HTML 파일 만드는 방법
+ARM macOS 에서는 전자 서명이 되지 않은 dmg 파일을 열 수 없는 문제가 있어서, standalone HTML 파일을 생성하고 이를 사용하도록 조치했습니다.
+```bash
+npm run build-single-html
+```
