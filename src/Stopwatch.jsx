@@ -3,7 +3,7 @@ import timerIcon from './assets/timer.svg';
 
 function Stopwatch() {
   const [time, setTime] = useState(0); // 경과 시간 (초 단위)
-  const [status, setStatus] = useState('stopped'); // 상태: stopped, running
+  const [status, setStatus] = useState('reset'); // 상태: stopped, running, reset
   const [isExpanded, setIsExpanded] = useState(false); // 펼쳐진 상태인지 여부
 
   useEffect(() => {
@@ -19,13 +19,14 @@ function Stopwatch() {
   }, [status]);
 
   const handleButtonClick = () => {
+    // running -> stopped -> reset -> running -> ...
     if (status === 'stopped') {
-      setTime(0); // 초기화 후 시작
-      setStatus('running');
-    } else if (status === 'running') {
+      setTime(0); // 초기화
+      setStatus('reset');
+    } else if (status === 'reset') {
+      setStatus('running') // 시작
+    } else { // running
       setStatus('stopped'); // 정지
-    } else {
-      setStatus('running'); // 재시작
     }
   };
 
@@ -56,7 +57,7 @@ function Stopwatch() {
             {status === 'running'
               ? '정지'
               : status === 'stopped'
-              ? '초기화 후 시작'
+              ? '초기화'
               : '시작'}
           </button>
         </div>
