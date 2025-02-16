@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import plusIcon from './assets/plus.svg';
-import timesIcon from './assets/times.svg';
 import classNames from 'classnames';
 import './App.css';
 import './resultFanfare.css';
@@ -564,66 +563,63 @@ function App() {
       </table>
 
       {/*조작부*/}
-      <div>
-        {!isManualExpanded && (
-          <button className="open-button" onClick={toggleManualExpand}>
-            <img src={plusIcon} alt="Plus Icon" width="36px" height="36px" />
-          </button>
-        )}
+      <div className="manual-score-container">
+        <div>
+          {!isManualExpanded && (
+            <button className="open-button" onClick={toggleManualExpand}>
+              <img src={plusIcon} alt="Plus Icon" width="36px" height="36px" />
+            </button>
+          )}
 
-        {isManualExpanded && (
-          <div className={`board control ${controlColor}`}>
-            <div className="manual">현재차례:</div>
-            <select
-              className="raneDropdown"
-              value={controlPlayer}
-              onChange={handleRaneDropdownChange}
-            >
-              <option value="" disabled>
-                열차놓을 팀
-              </option>
-              <option value="-1">{'색 삭제'}</option>
-              <option value="0">{teamNames[0]}</option>
-              <option value="1">{teamNames[1]}</option>
-              <option value="2">{teamNames[2]}</option>
-              <option value="3">{teamNames[3]}</option>
-              <option value="4">{teamNames[4]}</option>
-            </select>
-            <div className="manual">점수 수동 추가:</div>
-            {/* <select
-              className="scoreDropdown"
-              value={scoreDropdown}
-              onChange={handleScoreDropdownChange}
-            >
-              <option value="" disabled>
-                점수 수정할 팀
-              </option>
-              <option value="0">{teamNames[0]}</option>
-              <option value="1">{teamNames[1]}</option>
-              <option value="2">{teamNames[2]}</option>
-              <option value="3">{teamNames[3]}</option>
-              <option value="4">{teamNames[4]}</option>
-            </select> */}
-            <input
-              className="addedscore"
-              type="text"
-              value={emptyScore}
-              style={{ width: '70px' }}
-              onChange={handleAddedScoreChange}
-            />
-            <button className="confirm" onClick={handleScoreAdd}>
-              확인
-            </button>
-            <button className="close-button" onClick={toggleManualExpand}>
-              <img
-                src={timesIcon}
-                alt="Times Icon"
-                width="24px"
-                height="24px"
+          {isManualExpanded && (
+            <div className={`control ${controlColor}`}>
+              <div className="manual">현재차례:</div>
+              <select
+                className="raneDropdown"
+                value={controlPlayer}
+                onChange={handleRaneDropdownChange}
+              >
+                <option value="" disabled>
+                  열차놓을 팀
+                </option>
+                <option value="-1">{'색 삭제'}</option>
+                <option value="0">{teamNames[0]}</option>
+                <option value="1">{teamNames[1]}</option>
+                <option value="2">{teamNames[2]}</option>
+                <option value="3">{teamNames[3]}</option>
+                <option value="4">{teamNames[4]}</option>
+              </select>
+              <div className="manual">점수 수동 추가:</div>
+              {/* <select
+                className="scoreDropdown"
+                value={scoreDropdown}
+                onChange={handleScoreDropdownChange}
+              >
+                <option value="" disabled>
+                  점수 수정할 팀
+                </option>
+                <option value="0">{teamNames[0]}</option>
+                <option value="1">{teamNames[1]}</option>
+                <option value="2">{teamNames[2]}</option>
+                <option value="3">{teamNames[3]}</option>
+                <option value="4">{teamNames[4]}</option>
+              </select> */}
+              <input
+                className="addedscore"
+                type="text"
+                value={emptyScore}
+                style={{ width: '70px' }}
+                onChange={handleAddedScoreChange}
               />
-            </button>
-          </div>
-        )}
+              <button className="confirm" onClick={handleScoreAdd}>
+                확인
+              </button>
+              <button className="close-button" onClick={toggleManualExpand}>
+                ✕
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/*결과 보기*/}

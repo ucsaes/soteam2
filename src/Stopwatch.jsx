@@ -42,11 +42,11 @@ function Stopwatch() {
       )}
 
       {isExpanded && (
-        <div className="board stopwatch gray">
+        <div className="stopwatch gray">
           <div className="ttt">
             <span><b>스톱워치</b></span>
             <button className="close-button" onClick={toggleExpand}>
-              X
+              ✕
             </button>
           </div>
           <div className="tt">
