@@ -149,6 +149,6 @@ $('img').each((i, el) => {
 // });
 
 // 최종 수정된 HTML을 single.html 파일로 저장
-const outputFilePath = path.join(distPath, 'build-up-kaist-v0.0.6.html');
+const outputFilePath = path.join(distPath, 'build-up-kaist-v1.0.0.html');
 fs.writeFileSync(outputFilePath, $.html());
-console.log('✅ build-up-kaist-v0.0.6.html 생성 완료! 모든 리소스(CSS, JS, 이미지)가 인라인되었습니다.');
+console.log('✅ build-up-kaist-v1.0.0.html 생성 완료! 모든 리소스(CSS, JS, 이미지)가 인라인되었습니다.');

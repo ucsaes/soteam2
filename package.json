@@ -1,7 +1,7 @@
 {
   "name": "build-up-kaist",
   "private": true,
-  "version": "0.0.6",
+  "version": "1.0.0",
   "author": "ucsaes and sungjoonim",
   "description": "An electron app of Build Up! KAIST",
   "type": "module",
@@ -61,13 +61,13 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "build-up-kaist",
-            "setupExe": "build-up-kaist-v0.0.6.exe"
+            "setupExe": "build-up-kaist-v1.0.0.exe"
           }
         },
         {
           "name": "@electron-forge/maker-dmg",
           "config": {
-            "name": "build-up-kaist-v0.0.6"
+            "name": "build-up-kaist-v1.0.0"
           }
         }
       ]
