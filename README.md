@@ -1,4 +1,4 @@
-# 빌드업! 카이스트
+# Build Up! KAIST
 2025 전기 새내기새로배움터 소팀2 프로그램에 사용되는 코드입니다.
 <br>React + Vite 로 작성되어 있고, Electron 으로 application 을 build 합니다.
 
